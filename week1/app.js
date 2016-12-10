@@ -84,4 +84,26 @@
 
   // Till here protecting DI from minification
 
+
+  // Expressions and Interpolations
+
+  // Expression: {{exp}}
+  // Something that evaluates to some value
+  //
+  //  - Processed by Angular and roughly similar to the result of eval(some_js)
+  //  - Executed in the context of scope & has access to the properties on $scope
+  //  - Does not throw errors if it results in a TypeError or ReferenceError
+  //  - Control flow functions (e.g., 'if' statements, etc.) are not allowed.
+  //  - Accept a filter or a filter chain to format the output
+
+  // Interpolation
+  // The process of evaluating a string literal containing one or more placeholders, which are replaced with values.
+  //  - In Angular, this string:
+  //         Message is {{ message }}
+  //    (provided message = "hello") is interpolated into this string:
+  //         Message is hello
+  //  - Still connected to the original message property
+  //     - If $scope.message changes, so will the interpolation result
+
+
 })();
